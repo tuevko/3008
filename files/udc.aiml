@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
   <category>
+    <pattern>Hei</pattern>
+    <template>Tervetuloa, kuinka voin auttaa</template>
+  </category>
+</aiml>
+
+  <category>
     <pattern>*</pattern>
     <template>I have no answer for that.</template>
   </category>
@@ -51,10 +57,9 @@
         <split/>
         <condition name="product">
             <li value="unknown">Please let me know if you are interested in buying something.</li>
-            <li>We will check if we could get some products for sale that you were interested in, like <get name="product"/>. 
-            Sorry we did not have it yet!</li>
+            <li>We will check if we could get some products for sale that you were interested in, like <get name="product"/>. Sorry we did not have it yet!</li>
         </condition>
-        <split/>
+         <split/>
         <condition name="userLikes">
             <li value="boating">PS. You might wish to check our new boating catalog!</li>
         </condition>
@@ -65,5 +70,4 @@
 <category>
     <pattern>Click node to edit pattern</pattern>
     <template>Click node to edit template</template>
-</category>
-</aiml>
+</category
