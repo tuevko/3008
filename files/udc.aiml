@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>Etsin uusimpia tarjouksia </pattern>
+    <template>Tervetuloa. Kuinka voin auttaa?</template>
+  </category>
+<category>
+    <pattern>Onko teillä halpaa maitoa </pattern>
+    <template>Kyllä meillä on.</template>
+</category>
+<category>
+    <pattern></pattern>
+    <template></template>
+</category>
+</aiml>
