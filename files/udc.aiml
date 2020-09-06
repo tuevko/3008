@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
   <category>
-    <pattern>Etsin uusimpia tarjouksia </pattern>
-    <template>Tervetuloa. Kuinka voin auttaa?</template>
+    <pattern>*</pattern>
+    <template>I have no answer for that.</template>
   </category>
+  
 <category>
-    <pattern>Onko teillä halpaa maitoa </pattern>
-    <template>Kyllä meillä on.</template>
+    <pattern>HELLO</pattern>
+    <template>Hello and welcome! I am your private shopbot. Would you like to buy something?</template>
 </category>
+
+<category><pattern>HI</pattern><template><srai>HELLO</srai></template></category>
+<category><pattern>HI THERE</pattern><template><srai>HELLO</srai></template></category>
+
 <category>
-    <pattern></pattern>
-    <template></template>
+    <pattern>MY NAME IS *</pattern>
+    <template>Hello, <set name="user"><star/></set>. I am a bot with no name.</template>
+</category>
+
+<category>
+    <pattern>ANY *</pattern>
+    <template>Hmm. Let me check. Sorry! We do not have <set name="product"><star/></set> in stock currently.</template>
+</category> 
+
+<category><pattern>I WOULD LIKE TO BUY *</pattern><template><srai>ANY <star/></srai></template></category>
+<category><pattern>I WANT TO BUY *</pattern><template><srai>ANY <star/></srai></template></category>
+<category><pattern>I NEED *</pattern><template><srai>ANY <star/></srai></template></category>
+<category><pattern>DO YOU SELL *</pattern><template><srai>ANY <star/></srai></template></category>
+
+<category>
+    <pattern>* FISHING</pattern>
+    <template>Do you like boating?</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+    <that>DO YOU LIKE BOATING</that>
+    <template>Ok, you do like <set name="userLikes">boating</set>, good to know. (I wish I could go too.)</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+    <that>DO YOU LIKE BOATING</that>
+    <template>Ok, just asking. (I never get to go boating.)</template>
+</category>
+
+<category>
+    <pattern>BYE</pattern>
+    <template>Goodbye <get name="user"/>. 
+        <split/>
+        <condition name="product">
+            <li value="unknown">Please let me know if you are interested in buying something.</li>
+            <li>We will check if we could get some products for sale that you were interested in, like <get name="product"/>. 
+            Sorry we did not have it yet!</li>
+        </condition>
+        <split/>
+        <condition name="userLikes">
+            <li value="boating">PS. You might wish to check our new boating catalog!</li>
+        </condition>
+    </template>
+</category>
+
+
+<category>
+    <pattern>Click node to edit pattern</pattern>
+    <template>Click node to edit template</template>
 </category>
 </aiml>
